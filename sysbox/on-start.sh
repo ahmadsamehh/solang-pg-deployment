@@ -13,4 +13,4 @@
 #!/bin/bash
 
 # Just run the compiled backend binary (make sure it exists in final image)
-exec /app/target/release/backend --/app/packages/frontend/ /app/packages/app/dist --port 4444
+exec /app/target/release/backend --frontend_folder /app/packages/app/dist --port ${PORT}

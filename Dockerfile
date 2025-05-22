@@ -70,6 +70,9 @@ ENV PATH $NODE_PATH:$PATH
 
 
 #added by me
+EXPOSE 8080
+EXPOSE 3000
+EXPOSE 9000
 EXPOSE 4444
 # Startup scripts
 COPY sysbox/on-start.sh /usr/bin
