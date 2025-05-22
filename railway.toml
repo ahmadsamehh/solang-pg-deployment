@@ -1,0 +1,5 @@
+[build]
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "/app/target/release/backend --frontend_folder /app/packages/app/dist --port 4444"

@@ -54,6 +54,9 @@ COPY --from=builder /app/packages/frontend/public /app/packages/frontend/public
 COPY --from=builder /app/packages/frontend/package.json /app/packages/frontend/package.json
 COPY --from=builder /app/target/release/backend /app/target/release/backend
 
+
+
+
 # Install Node.js in the final image for running Next.js
 RUN apt-get update && apt-get install -y curl
 ENV NVM_DIR /usr/local/nvm
@@ -64,6 +67,10 @@ RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use
 ENV NODE_PATH $NVM_DIR/versions/node/$NODE_VERSION/bin
 ENV PATH $NODE_PATH:$PATH
 
+
+
+#added by me
+EXPOSE 4444
 # Startup scripts
 COPY sysbox/on-start.sh /usr/bin
 RUN chmod +x /usr/bin/on-start.sh
